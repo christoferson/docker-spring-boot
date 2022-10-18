@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true

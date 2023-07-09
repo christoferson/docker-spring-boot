@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -16,6 +17,14 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class ApplicationConfig {
 
+	private final AuthenticationProvider authenticationProvider;
+
+	public ApplicationConfig(AuthenticationProvider authenticationProvider) {
+		System.out.println(authenticationProvider);
+
+		this.authenticationProvider = authenticationProvider;
+	}
+	  
 	// Spring Security - Define UserDetailsService and Password Encoder
 	
 	@Bean

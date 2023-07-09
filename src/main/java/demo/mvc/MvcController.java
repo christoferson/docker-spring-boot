@@ -13,6 +13,7 @@ public class MvcController {
 	@GetMapping("/demo")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
+		model.addAttribute("timestamp", System.currentTimeMillis());
 		return "demo";
 	}
 
